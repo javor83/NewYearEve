@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Invite";
+}
+
+
+@model GuestResponse
+<h1>Invite</h1>
+<form method="post" asp-action="Invite" asp-antiforgery="true" asp-controller="Home">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td>@Html.LabelFor(x=>x.Name)</td>
+            <td><input type="text" asp-for="@Model.Name" /></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Email)</td>
+            <td><input type="text" asp-for="@Model.Email" /></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Phone)</td>
+            <td><input type="text" asp-for="@Model.Phone" /></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.WillAttend)</td>
+            <td>
+                <select asp-for="@Model.WillAttend">
+                    <option value="">@const_caption_GuestResponse.UndefinedOption</option>
+                    <option value="@true.ToString()">@const_caption_GuestResponse.YesOption</option>
+                    <option value="@false.ToString()">@const_caption_GuestResponse.DeclineOption</option>
+
+                </select>
+
+               
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="@const_caption_GuestResponse.Label_Save" />
+                <a asp-action="Index" asp-controller="Home">@const_caption_GuestResponse.Label_Cancel</a>
+            </td>
+            
+        </tr>
+    </table>
+
+
+</form>
+
