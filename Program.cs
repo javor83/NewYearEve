@@ -1,3 +1,6 @@
+using NewYearEve.Interfaces;
+using NewYearEve.Models;
+
 namespace NewYearEve
 {
     public class Program
@@ -8,7 +11,7 @@ namespace NewYearEve
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddSingleton<IRepositoryGuestResponse, RepositoryGuestResponse>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

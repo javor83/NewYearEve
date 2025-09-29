@@ -1,15 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<GuestResponse>
+@if(Model.Any())
+{
+<table class="table table-striped table-bordered">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-
-@model IEnumerable<GuestResponse>
-<table>
     @foreach (var k in Model)
     {
         <tr>
@@ -19,7 +12,12 @@
             <td>@k.WillAttend</td>
         </tr>    
     }
-</table>
+    </table>
+}else
+{
+    
+}
+
 <div>
-    <a asp-action="Invite" asp-controller="Home">Invite</a>
+    <a asp-action="Invite" asp-controller="Home" class="btn btn-primary">@resx_view_Index.Invite</a>
 </div>

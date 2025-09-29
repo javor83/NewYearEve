@@ -1,4 +1,6 @@
 ﻿
+using NewYearEve.Interfaces;
+
 namespace NewYearEve.Models
 {
     public class RepositoryGuestResponse : IRepositoryGuestResponse

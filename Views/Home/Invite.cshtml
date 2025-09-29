@@ -1,47 +1,39 @@
-﻿
-@{
-    ViewData["Title"] = "Invite";
-}
+﻿@using NewYearEve.resx.model
+@using NewYearEve.resx.view
+
+
 
 
 @model GuestResponse
-<h1>Invite</h1>
+<h1 class="text-center">@resx_view_Invite.NewInvite</h1>
 <form method="post" asp-action="Invite" asp-antiforgery="true" asp-controller="Home">
     <div asp-validation-summary="All"></div>
-    <table>
-        <tr>
-            <td>@Html.LabelFor(x=>x.Name)</td>
-            <td><input type="text" asp-for="@Model.Name" /></td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.Email)</td>
-            <td><input type="text" asp-for="@Model.Email" /></td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.Phone)</td>
-            <td><input type="text" asp-for="@Model.Phone" /></td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.WillAttend)</td>
-            <td>
-                <select asp-for="@Model.WillAttend">
-                    <option value="">@const_caption_GuestResponse.UndefinedOption</option>
-                    <option value="@true.ToString()">@const_caption_GuestResponse.YesOption</option>
-                    <option value="@false.ToString()">@const_caption_GuestResponse.DeclineOption</option>
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(x => x.Name)
+        <input type="text" asp-for="@Model.Name" class="form-control" />
+    </div>
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(x => x.Email)
+        <input type="email" asp-for="@Model.Email" class="form-control" />
+    </div>
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(x => x.Phone)
+        <input type="tel" asp-for="@Model.Phone" class="form-control" />
+    </div>
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(x => x.WillAttend)
+        <select asp-for="@Model.WillAttend" class="form-control">
+            <option value="">@resx_view_Invite.UndefinedOption</option>
+            <option value="@true.ToString()">@resx_view_Invite.YesOption</option>
+            <option value="@false.ToString()">@resx_view_Invite.DeclineOption</option>
 
-                </select>
-
-               
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="@const_caption_GuestResponse.Label_Save" />
-                <a asp-action="Index" asp-controller="Home">@const_caption_GuestResponse.Label_Cancel</a>
-            </td>
-            
-        </tr>
-    </table>
+        </select>
+    </div>
+    <div class="mb-3 mt-3">
+        <input type="submit" value="@resx_view_Invite.Label_Save" class="btn btn-primary" />
+        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-info">@resx_view_Invite.Label_Cancel</a>
+    </div>
+    
 
 
 </form>
