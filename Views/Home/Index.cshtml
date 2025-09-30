@@ -3,19 +3,35 @@
 {
 <table class="table table-striped table-bordered">
 
+    <tr>
+        <th>@resx_view_Index.Label_Name</th>
+            <th>@resx_view_Index.Label_Email</th>
+            <th>@resx_view_Index.Label_Phone</th>
+            <th>@resx_view_Index.Label_Attend</th>
+    </tr>
     @foreach (var k in Model)
     {
+        
         <tr>
             <td>@k.Name</td>
             <td>@k.Email</td>
             <td>@k.Phone</td>
-            <td>@k.WillAttend</td>
+            @if (@k.WillAttend.HasValue && k.WillAttend.Value == true)
+            {
+                <td>@resx_view_Index.Label_Accept</td>
+            } else
+            {
+
+                <td>@resx_view_Index.Label_Decline</td>
+            }
+
+                
         </tr>    
     }
     </table>
 }else
 {
-    
+    <h1 class="text-center">@resx_view_Index.Label_NoInvite</h1>
 }
 
 <div>
