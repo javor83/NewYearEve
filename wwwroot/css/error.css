@@ -2,6 +2,25 @@
     color:red;
     border-color:red;
 }
-.validation-summary-errors{
-    border-color: red;
+
+th {
+    text-align:center;
 }
+
+.validation-summary-errors ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+    .validation-summary-errors ul li
+    {
+      
+       
+       display:block;
+       text-align:center;
+       color:white;
+       background-color:rgb(77,77,77);
+       margin-bottom:5px;
+       border-radius:5px;
+       padding:5px;
+    }
