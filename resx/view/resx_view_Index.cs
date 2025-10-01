@@ -8,7 +8,7 @@
         public const string Label_Name = "Име";
         
         
-        public const string Label_Phone = "Телефон";
+        public const string Label_Phone = "Телефон";//ok
        
         
         public const string Label_Email = "Електронна поща";
