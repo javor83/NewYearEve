@@ -5,7 +5,7 @@
         public const string Invite = "Изпрати покана";
 
 
-        public const string Label_Name = "Име";
+        public const string Label_Name = "Име";//ok
         
         
         public const string Label_Phone = "Телефон";//ok
